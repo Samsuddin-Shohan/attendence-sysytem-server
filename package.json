@@ -1,0 +1,21 @@
+{
+  "name": "attndence-system",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Samsuddin-Shohan/attendence-sysytem-server.git",
+  "author": "Samsuddin-Shohan <shohan.cse.hstu@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  },
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "morgan": "^1.10.0"
+  }
+}

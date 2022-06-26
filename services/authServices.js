@@ -25,14 +25,20 @@ const loginServices = async ({ email, password }) => {
   const token = jwt.sign(payload, 'secret-key');
   return token;
 };
-const registerServices = async ({ email, password, name }) => {
+const registerServices = async ({
+  email,
+  password,
+  name,
+  accountStatus,
+  roles,
+}) => {
   let user = await findUserByProperty('email', email);
   if (user) {
     throw error('User Already existed', 400);
   }
   const salt = await bcrypt.genSaltSync(10);
   const hash = await bcrypt.hashSync(password, salt);
-  return createNewUser({ name, email, password: hash });
+  return createNewUser({ name, email, password: hash, accountStatus, roles });
 };
 module.exports = {
   loginServices,

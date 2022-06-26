@@ -1,11 +1,16 @@
-const {Schema,model}=require('mongoose');
+const { Schema, model } = require('mongoose');
 
 const profileSchema = new Schema({
-    name: String
-   
-   
-})
+  firsname: String,
+  lastname: String,
+  phone: String,
+  avatar: String,
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+  },
+});
 
-const profiles = model('profiles',profileSchema);
+const profiles = model('Profiles', profileSchema);
 
 module.exports = profiles;
